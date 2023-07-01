@@ -1,8 +1,8 @@
 {
   "name": "re-ti-ajuda",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Reengenharia do Projeto Ti-Ajuda, desenvolvido em Prog 4.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint",
