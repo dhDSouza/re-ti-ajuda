@@ -1,18 +1,18 @@
 const Question = require('../models/question')
 
-async function create(description, userId) {
+async function createQuestion(description, userId) {
 	return Question.create({ description, userId })
 }
 
-async function findById(id) {
-	return Question.findById(id)
+async function findQuestionByUserId(userId) {
+	return Question.find({ userId })
 }
 
-async function findAll() {
+async function findAllQuestions() {
 	return Question.find()
 }
 
-async function update(id, description) {
+async function updateQuestion(id, description) {
 	return Question.findByIdAndUpdate(id, { description })
 }
 
@@ -21,9 +21,9 @@ async function deleteQuestion(id) {
 }
 
 module.exports = {
-	create,
-	findById,
-	findAll,
-	update,
+	createQuestion,
+	findQuestionByUserId,
+	findAllQuestions,
+	updateQuestion,
 	deleteQuestion
 }
