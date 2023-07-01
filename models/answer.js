@@ -1,7 +1,9 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
+const Question = require('./question')
+const User = require('./user')
 
-const Answer = sequelize.define('Question', {
+const Answer = sequelize.define('Answer', {
 	id: {
 		type: DataTypes.INTEGER,
 		autoIncrement: true,
@@ -11,22 +13,9 @@ const Answer = sequelize.define('Question', {
 		type: DataTypes.STRING,
 		allowNull: false,
 	},
-	QuestionId: {
-		type: DataTypes.INTEGER,
-		references: {
-			model: 'Question',
-			key: 'id'
-		},
-		allowNull: false
-	},
-	UserId: {
-		type: DataTypes.INTEGER,
-		references: {
-			model: 'User',
-			key: 'id'
-		},
-		allowNull: false
-	}
 })
+
+Answer.belongsTo(Question, { foreignKey: 'QuestionId' })
+Answer.belongsTo(User, { foreignKey: 'UserId' })
 
 module.exports = Answer
