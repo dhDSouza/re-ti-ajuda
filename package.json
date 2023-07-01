@@ -1,0 +1,28 @@
+{
+  "name": "re-ti-ajuda",
+  "version": "1.0.1",
+  "description": "Reengenharia do Projeto Ti-Ajuda, desenvolvido em Prog 4.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint",
+    "prepare": "husky install",
+    "start": "node server.js"
+  },
+  "author": "Daniel Henrique de Souza",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "eslint": "^8.44.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^1.14.9"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.4.3",
+    "sequelize": "^6.32.1"
+  }
+}
