@@ -1,4 +1,6 @@
-const { User, Question, Answer } = require('../models')
+const User = require('../models/user')
+const Question = require('../models/question')
+const Answer = require('../models/answer')
 
 async function userAlreadyExist(req, res, next) {
 	const { username } = req.body
