@@ -9,23 +9,11 @@ async function findUserByUsername(username) {
 }
 
 async function updateUser(id, newData) {
-	const user = await User.findByPk(id)
-	if (!user) {
-		throw new Error('Usuário não encontrado')
-	}
-    
-	await user.update(newData)
-    
-	return user
+	return User.update(newData, { where: { id } })
 }
   
 async function deleteUser(id) {
-	const user = await User.findByPk(id)
-	if (!user) {
-		throw new Error('Usuário não encontrado')
-	}
-    
-	await user.destroy()
+	return User.destroy({ where: { id } })
 }
 
 module.exports = {
