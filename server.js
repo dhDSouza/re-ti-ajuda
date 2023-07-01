@@ -2,6 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const sequelize = require('./config/connection')
+const userRoute = require('./routes/user-routes')
+const questionRoute = require('./routes/question-routes')
+const answerRoute = require('./routes/answer-routes')
+const errorHandler = require('./middlewares/error-middleware')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -13,6 +17,12 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true,
 }))
+
+app.use('/api/user', userRoute)
+app.use('/api/question', questionRoute)
+app.use('/api/answer', answerRoute)
+
+app.use(errorHandler)
 
 sequelize.authenticate().then(async () => {
 	console.log('Conexão com o banco de dados estabelecida com sucesso.')
