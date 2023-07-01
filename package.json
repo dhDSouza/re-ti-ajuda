@@ -1,0 +1,20 @@
+{
+  "name": "ti-ajuda",
+  "version": "1.0.0",
+  "description": "Reengenharia do Projeto Ti-Ajuda, desenvolvido em Prog 4.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint",
+    "prepare": "husky install"
+  },
+  "author": "Daniel Henrique de Souza",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "eslint": "^8.44.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^1.14.9"
+  }
+}
