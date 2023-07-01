@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
+const User = require('./user')
 
 const Question = sequelize.define('Question', {
 	id: {
@@ -11,14 +12,8 @@ const Question = sequelize.define('Question', {
 		type: DataTypes.STRING,
 		allowNull: false,
 	},
-	UserId: {
-		type: DataTypes.INTEGER,
-		references: {
-			model: 'User',
-			key: 'id'
-		},
-		allowNull: false
-	}
 })
+
+Question.belongsTo(User, { foreignKey: 'UserId' })
 
 module.exports = Question
