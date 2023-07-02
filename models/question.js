@@ -6,14 +6,18 @@ const Question = sequelize.define('Question', {
 	id: {
 		type: DataTypes.INTEGER,
 		autoIncrement: true,
-		primaryKey: true,
+		primaryKey: true
 	},
 	description: {
 		type: DataTypes.STRING,
-		allowNull: false,
+		allowNull: false
 	},
+	userId: {
+		type: DataTypes.INTEGER,
+		allowNull: false
+	}	
 })
 
-Question.belongsTo(User, { foreignKey: 'UserId' })
+Question.belongsTo(User, { foreignKey: 'userId' })
 
 module.exports = Question
