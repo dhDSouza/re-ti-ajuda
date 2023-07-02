@@ -1,16 +1,16 @@
 const Question = require('../models/question')
 const Answer = require('../models/answer')
 
-async function createQuestion(description, userId) {
-	return Question.create({ description, userId })
+async function createQuestion(userId, description) {
+	return Question.create({ userId, description })
 }
 
 async function findQuestionByUserId(userId) {
-	return Question.find({ userId })
+	return Question.findAll({ where: { userId } })
 }
 
 async function findAllQuestions() {
-	return Question.find()
+	return Question.findAll()
 }
 
 async function updateQuestion(id, description) {
@@ -18,7 +18,7 @@ async function updateQuestion(id, description) {
 }
 
 async function deleteQuestion(id) {
-	await Answer.deleteMany({ questionId: id })
+	await Answer.deleteMany({ where: { questionId: id } })
 	return Question.findByIdAndDelete(id)
 }
 

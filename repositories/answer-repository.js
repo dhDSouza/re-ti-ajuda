@@ -1,12 +1,11 @@
 const Answer = require('../models/answer')
 
-async function createAnswer(description, questionId, userId) {
-	return Answer.create({ description, questionId, userId })
-
+async function createAnswer(userId, questionId, description) {
+	return Answer.create({ userId, questionId, description })
 }
 
 async function findAnswerByQuestionId(questionId) {
-	return Answer.find({ questionId })
+	return Answer.findAll({ where: { questionId } })
 }
 
 async function updateAnswer(id, description) {
