@@ -1,7 +1,7 @@
 const QuestionRepository = require('../repositories/question-repository')
 
-async function createQuestion(description, userId) {
-	return QuestionRepository.createQuestion(description, userId)
+async function createQuestion(userId, description) {
+	return QuestionRepository.createQuestion(userId, description)
 }
 
 async function findAllQuestions() {
