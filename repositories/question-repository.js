@@ -5,7 +5,7 @@ async function createQuestion(userId, description) {
 	return Question.create({ userId, description })
 }
 
-async function findQuestionByUserId(userId) {
+async function findQuestionsByUserId(userId) {
 	return Question.findAll({ where: { userId } })
 }
 
@@ -24,7 +24,7 @@ async function deleteQuestion(id) {
 
 module.exports = {
 	createQuestion,
-	findQuestionByUserId,
+	findQuestionsByUserId,
 	findAllQuestions,
 	updateQuestion,
 	deleteQuestion
