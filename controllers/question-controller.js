@@ -22,10 +22,10 @@ async function findAllQuestions(req, res) {
 }
 
 async function findQuestionsByUserId(req, res) {
-	const { userId } = req.session
+	const { id } = req.params
 
 	try {
-		const questions = await QuestionService.findQuestionsByUserId(userId)
+		const questions = await QuestionService.findQuestionsByUserId(id)
 		res.status(200).json(questions)
 	} catch (error) {
 		res.status(500).json({ message: 'Erro ao buscar perguntas', error: error.message })
