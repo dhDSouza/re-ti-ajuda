@@ -13,9 +13,17 @@ const Answer = sequelize.define('Answer', {
 		type: DataTypes.STRING,
 		allowNull: false,
 	},
+	userId: {
+		type: DataTypes.INTEGER,
+		allowNull: false
+	},
+	questionId: {
+		type: DataTypes.INTEGER,
+		allowNull: false
+	}		
 })
 
-Answer.belongsTo(Question, { foreignKey: 'QuestionId' })
-Answer.belongsTo(User, { foreignKey: 'UserId' })
+Answer.belongsTo(Question, { foreignKey: 'questionId', allowNull: false })
+Answer.belongsTo(User, { foreignKey: 'userId', allowNull: false })
 
 module.exports = Answer
