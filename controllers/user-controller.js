@@ -16,7 +16,7 @@ async function loginUser(req, res) {
 
 	try {
 		const user = await UserService.loginUser(username, password)
-		req.session.user = user
+		req.session.userId = user.id
 		res.json({ message: 'Usuário autenticado com sucesso' })
 	} catch (error) {
 		res.status(401).json({ message: 'Falha na autenticação', error: error.message })
@@ -30,9 +30,10 @@ async function logoutUser(req, res) {
 
 async function updateUser(req, res) {
 	const { username, password } = req.body
+	const { userId } = req.session
 
 	try {
-		await UserService.updateUser(username, password)
+		await UserService.updateUser(userId, username, password)
 		res.json({ message: 'Usuário atualizado com sucesso' })
 	} catch (error) {
 		res.status(500).json({ message: 'Erro ao atualizar usuário', error: error.message })
@@ -40,10 +41,10 @@ async function updateUser(req, res) {
 }
 
 async function deleteUser(req, res) {
-	const { username, password } = req.body
+	const { userId } = req.session
 
 	try {
-		await UserService.deleteUser(username, password)
+		await UserService.deleteUser(userId)
 		res.json({ message: 'Usuário deletado com sucesso' })
 	} catch (error) {
 		res.status(500).json({ message: 'Erro ao deletar usuário', error: error.message })

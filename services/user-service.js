@@ -22,7 +22,13 @@ async function loginUser(username, password) {
 
 async function updateUser(id, username, password) {
 	const hashedPassword = await bcrypt.hash(password, 10)
-	return UserRepository.updateUser(id, username, hashedPassword)
+
+	const newData = {
+		username: username,
+		password: hashedPassword
+	}
+	
+	return UserRepository.updateUser(id, newData)
 }
 
 async function deleteUser(id) {
