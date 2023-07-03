@@ -9,12 +9,11 @@ async function findAnswerByQuestionId(questionId) {
 }
 
 async function updateAnswer(id, description) {
-	return Answer.findByIdAndUpdate(id, { description })
-
+	return Answer.update(description, { where: { id } })
 }
 
 async function deleteAnswer(id) {
-	return Answer.findByIdAndDelete(id)
+	return Answer.destroy({ where: { id } })
 
 }
 

@@ -4,7 +4,7 @@
   "description": "Reengenharia do Projeto Ti-Ajuda, desenvolvido em Prog 4.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "npx eslint",
     "prepare": "husky install",
     "start": "node server.js"
@@ -12,9 +12,12 @@
   "author": "Daniel Henrique de Souza",
   "license": "ISC",
   "devDependencies": {
+    "babel-jest": "^29.5.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-html-reporter": "^3.10.1",
     "lint-staged": "^13.2.3",
     "nodemon": "^2.0.22"
   },
