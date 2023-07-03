@@ -12,7 +12,7 @@ describe('AnswerController', () => {
 
 	it('deve criar uma nova resposta e retornar status 201', async () => {
 		const mockCreateAnswer = jest.spyOn(AnswerService, 'createAnswer')
-		const req = { params: { questionId: 1 }, session: { userId: 1 }, body: { description: 'Minha resposta' } }
+		const req = { params: { id: 1 }, session: { userId: 1 }, body: { description: 'Minha resposta' } }
 		const res = { status: jest.fn().mockReturnThis(), json: jest.fn() }
 
 		await AnswerController.createAnswer(req, res)
@@ -24,7 +24,7 @@ describe('AnswerController', () => {
 
 	it('deve buscar uma resposta pelo ID da pergunta e retornar status 200', async () => {
 		const mockFindAnswerByQuestionId = jest.spyOn(AnswerService, 'findAnswerByQuestionId')
-		const req = { params: { questionId: 1 } }
+		const req = { params: { id: 1 } }
 		const res = { status: jest.fn().mockReturnThis(), json: jest.fn() }
 		const answer = { id: 1, description: 'Minha resposta' }
 
