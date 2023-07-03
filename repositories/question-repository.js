@@ -14,12 +14,12 @@ async function findAllQuestions() {
 }
 
 async function updateQuestion(id, description) {
-	return Question.findByIdAndUpdate(id, { description })
+	return Question.update(description, { where: { id } })
 }
 
 async function deleteQuestion(id) {
-	await Answer.deleteMany({ where: { questionId: id } })
-	return Question.findByIdAndDelete(id)
+	await Answer.destroy({ where: { questionId: id } })
+	return Question.destroy({ where: { id } })
 }
 
 module.exports = {
