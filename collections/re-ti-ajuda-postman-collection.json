@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "11204bb4-4a07-4acf-96c9-05b347156c82",
+		"name": "API Collection TI-AJUDA",
+		"description": "API Collection TI-AJUDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26849258"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{randomName}}\",\n  \"password\": \"{{randomPassword}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/register",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{randomName}}\",\n  \"password\": \"{{randomPassword}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/login",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_user}}/logout",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{randomName}}\",\n  \"password\": \"{{randomPassword}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/{{userId}}",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_user}}/{{userId}}",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Create Question",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"{{randomQuestion}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_question}}",
+							"host": [
+								"{{base_url_question}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Questions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_question}}",
+							"host": [
+								"{{base_url_question}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Questions by User ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_question}}/{{userId}}",
+							"host": [
+								"{{base_url_question}}"
+							],
+							"path": [
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"{{randomQuestion}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_question}}/{{questionId}}",
+							"host": [
+								"{{base_url_question}}"
+							],
+							"path": [
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_question}}/{{questionId}}",
+							"host": [
+								"{{base_url_question}}"
+							],
+							"path": [
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "Create Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"{{randomAnswer}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_answer}}/{{questionId}}",
+							"host": [
+								"{{base_url_answer}}"
+							],
+							"path": [
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Answer by Question ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_answer}}/{{questionId}}",
+							"host": [
+								"{{base_url_answer}}"
+							],
+							"path": [
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Answer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"{{randomAnswer}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_answer}}/{{answerId}}",
+							"host": [
+								"{{base_url_answer}}"
+							],
+							"path": [
+								"{{answerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Answer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_answer}}/{{answerId}}",
+							"host": [
+								"{{base_url_answer}}"
+							],
+							"path": [
+								"{{answerId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_user",
+			"value": "https://example.com/api/user",
+			"type": "string"
+		},
+		{
+			"key": "base_url_question",
+			"value": "https://example.com/api/question",
+			"type": "string"
+		},
+		{
+			"key": "base_url_answer",
+			"value": "https://example.com/api/answer",
+			"type": "string"
+		},
+		{
+			"key": "randomName",
+			"value": "John Doe",
+			"type": "string"
+		},
+		{
+			"key": "randomPassword",
+			"value": "P@ssw0rd",
+			"type": "string"
+		},
+		{
+			"key": "randomQuestion",
+			"value": "Qual é a capital da França?",
+			"type": "string"
+		},
+		{
+			"key": "randomAnswer",
+			"value": "A capital da França é Paris.",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "questionId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "answerId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}

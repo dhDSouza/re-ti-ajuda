@@ -1,9 +1,10 @@
 const AnswerService = require('../services/answer-service')
 
 async function createAnswer(req, res) {
-	const { questionId } = req.params
+	const { id } = req.params
 	const { userId } = req.session
 	const { description } = req.body
+	var questionId = id
 
 	try {
 		await AnswerService.createAnswer(userId, questionId, description)
@@ -14,7 +15,8 @@ async function createAnswer(req, res) {
 }
 
 async function findAnswerByQuestionId(req, res) {
-	const { questionId } = req.params
+	const { id } = req.params
+	var questionId = id
 
 	try {
 		const answer = await AnswerService.findAnswerByQuestionId(questionId)

@@ -24,7 +24,7 @@ async function deleteUser(id) {
 	}
 
 	for (const question of questions) {
-		await Answer.deleteMany({ where: { questionId: question.id } })
+		await Answer.destroy({ where: { questionId: question.id } })
 		await question.destroy()
 	}
 
