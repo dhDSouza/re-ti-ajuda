@@ -1,6 +1,6 @@
 # re-ti-ajuda
 
-Uma reengenharia do back-end do aplicativo TI-AJUDA realizada na disciplina de Programação IV.
+Este repositório contém uma reengenharia do back-end do aplicativo TI-AJUDA realizada na disciplina de Programação IV do curso de Tecnólogo em Análise e Desenvolvimento de Sistemas no Instituto Federal de Educação, Ciência e Tecnologia Farroupilha - Campus São Vicente do Sul.
 
 ## Sumário
 
